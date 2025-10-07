@@ -29,7 +29,7 @@ variable "node_count" {
 }
 
 variable "node_vm_size" {
-  type        = number
+  type        = string
   description = "Number of nodes in the default node pool"
   default     = "Standard_D1_v2"
 }
