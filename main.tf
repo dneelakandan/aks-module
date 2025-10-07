@@ -8,13 +8,14 @@ resource "azurerm_kubernetes_cluster" "aks_cluster" {
   private_cluster_enabled = true
 
   default_node_pool {
-    name              = "default"
+    name              = var.nodepool_name
     node_count        = var.node_count
     vm_size           = var.node_vm_size
     os_disk_size_gb   = 128
     vnet_subnet_id    = var.vnet_subnet_id
     max_pods          = 50
     type              = "VirtualMachineScaleSets"
+    temporary_name_for_rotation = "tempnp"
   }
 
   identity {

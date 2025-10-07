@@ -5,6 +5,11 @@ variable "cluster_name" {
   default     = "lbs-aks-cluster"
 }
 
+variable "nodepool_name" {
+  type        = string
+  description = "Name of the nodepool"
+  default     = "lbgnodepool"
+}
 variable "location" {
    type        = string
   description = "Azure region for AKS deployment"
@@ -26,7 +31,7 @@ variable "node_count" {
 variable "node_vm_size" {
   type        = number
   description = "Number of nodes in the default node pool"
-  default     = 2
+  default     = "Standard_D1_v2"
 }
 
 variable "vnet_subnet_id" {
